@@ -20,7 +20,7 @@
     }
   },
   "require": {
-    "letsdrink/ouzo-goodies": "dev-master"
+    "letsdrink/ouzo-goodies": "~1.6"
   },
   "require-dev": {
     "phpunit/phpunit": "~5.5"
