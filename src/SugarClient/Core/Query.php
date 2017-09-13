@@ -61,6 +61,9 @@ class Query
     public function fetch()
     {
         $results = $this->doFetchRequest();
+        if(null === $results){
+            return null;
+        }
         $result = Arrays::firstOrNull($results->entry_list);
         if ($result) {
             $module = Converter::toModule($result, $this->module);

@@ -37,7 +37,12 @@ class WhereClause
 
     private function buildWhereForSingleValue($column, $value)
     {
-        $where = $this->getModuleDbName() . '.' . $column;
+        if(false === strpos($column, '.')){
+            $where = $this->getModuleDbName() . '.' . $column;
+        }
+        else{
+            $where = $column;
+        }
         if ($this->isValueHasReservedKeywords($value)) {
             $where .= ' ' . $value . ' AND ';
         } else {
